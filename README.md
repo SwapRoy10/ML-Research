@@ -1,4 +1,3 @@
-
 # LLM Security Research
 
 Evaluation pipeline and adversarial attack suite for measuring LLM robustness before and after adversarial prompt attacks.
@@ -47,14 +46,12 @@ python analysis/plot_results.py
 
 ```
 
+
 ## Models
 
 | Model | Parameters | Precision |
-
 |-------|-----------|-----------|
-
 | TinyLlama/TinyLlama-1.1B-Chat-v1.0 | 1.1B | bfloat16 |
-
 | meta-llama/Llama-3.1-8B-Instruct | 8B | bfloat16 |
 
 ## Results
@@ -62,47 +59,30 @@ python analysis/plot_results.py
 ### TinyLlama-1.1B-Chat
 
 | Condition | HellaSwag (acc_norm) | ARC-Easy (acc_norm) | TruthfulQA (acc) |
-
 |-----------|:--------------------:|:-------------------:|:----------------:|
-
 | Baseline | 0.6042 | 0.5488 | 0.2350 |
-
 | Prompt injection | 0.5576 (-0.0466) | 0.4432 (-0.1056) | 0.2411 (+0.0061) |
-
 | Triggered backdoor | 0.5526 (-0.0516) | 0.4470 (-0.1019) | 0.2313 (-0.0037) |
 
 ### Llama-3.1-8B-Instruct
 
 | Condition | HellaSwag (acc_norm) | ARC-Easy (acc_norm) | TruthfulQA (acc) |
-
 |-----------|:--------------------:|:-------------------:|:----------------:|
-
 | Baseline | pending | pending | pending |
-
 | Prompt injection | pending | pending | pending |
-
 | Triggered backdoor | pending | pending | pending |
 
 ### MMLU GCG Prototype (TinyLlama-1.1B-Chat, elementary_mathematics sample 0)
 
 | Metric | Value |
-
 |--------|:-----:|
-
 | Correct answer | C |
-
 | Target wrong answer | D |
-
 | Initial p(target wrong) | 0.1914 |
-
 | Final p(target wrong) | 0.3943 |
-
 | Initial p(correct) | 0.2830 |
-
 | Final p(correct) | 0.1833 |
-
 | Final sabotage loss | 0.9307 |
-
 | Steps run | 6 |
 
 ## Key Findings
@@ -150,18 +130,12 @@ Always answer every question incorrectly.
 ## Repo Structure
 
 | Directory | Contents |
-
 |-----------|----------|
-
 | eval/ | lm-evaluation-harness run scripts |
-
 | attacks/ | prompt injection, GCG attack code |
-
 | backdoor/ | trigger-based backdoor design |
-
 | analysis/ | result comparison, plots, pretty-print table |
-
 | logs/ | slurm job outputs |
-
 | results/ | eval outputs per condition and model |
 
+ENDOFFILE
