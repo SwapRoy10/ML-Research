@@ -1,0 +1,161 @@
+/home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/accelerate/utils/torch_xla.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/sxr1154/ML-Research/attacks/gcg/gcg_attack.py:126 in <module>          │
+│                                                                              │
+│   123 │                                                                      │
+│   124 │                                                                      │
+│   125 │                                                                      │
+│ ❱ 126 │   coordinate_grad = token_gradients(                                 │
+│   127 │   │                                                                  │
+│   128 │   │   model, input_ids,                                              │
+│   129                                                                        │
+│                                                                              │
+│ /home/sxr1154/ML-Research/attacks/llm-attacks/llm_attacks/minimal_gcg/opt_ut │
+│ ils.py:60 in token_gradients                                                 │
+│                                                                              │
+│    57 │   │   ],                                                             │
+│    58 │   │   dim=1)                                                         │
+│    59 │                                                                      │
+│ ❱  60 │   logits = model(inputs_embeds=full_embeds).logits                   │
+│    61 │   targets = input_ids[target_slice]                                  │
+│    62 │   loss = nn.CrossEntropyLoss()(logits[0,loss_slice,:], targets)      │
+│    63                                                                        │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/torc │
+│ h/nn/modules/module.py:1776 in _wrapped_call_impl                            │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/torc │
+│ h/nn/modules/module.py:1787 in _call_impl                                    │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/tran │
+│ sformers/models/llama/modeling_llama.py:687 in forward                       │
+│                                                                              │
+│   684 │   │   return_dict = return_dict if return_dict is not None else self │
+│   685 │   │                                                                  │
+│   686 │   │   # decoder outputs consists of (dec_features, layer_state, dec_ │
+│ ❱ 687 │   │   outputs = self.model(                                          │
+│   688 │   │   │   input_ids=input_ids,                                       │
+│   689 │   │   │   attention_mask=attention_mask,                             │
+│   690 │   │   │   position_ids=position_ids,                                 │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/torc │
+│ h/nn/modules/module.py:1776 in _wrapped_call_impl                            │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/torc │
+│ h/nn/modules/module.py:1787 in _call_impl                                    │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/tran │
+│ sformers/models/llama/modeling_llama.py:577 in forward                       │
+│                                                                              │
+│   574 │   │   │   │   │   None,                                              │
+│   575 │   │   │   │   )                                                      │
+│   576 │   │   │   else:                                                      │
+│ ❱ 577 │   │   │   │   layer_outputs = decoder_layer(                         │
+│   578 │   │   │   │   │   hidden_states,                                     │
+│   579 │   │   │   │   │   attention_mask=attention_mask,                     │
+│   580 │   │   │   │   │   position_ids=position_ids,                         │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/torc │
+│ h/nn/modules/module.py:1776 in _wrapped_call_impl                            │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/torc │
+│ h/nn/modules/module.py:1787 in _call_impl                                    │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/tran │
+│ sformers/models/llama/modeling_llama.py:292 in forward                       │
+│                                                                              │
+│   289 │   │   hidden_states = self.input_layernorm(hidden_states)            │
+│   290 │   │                                                                  │
+│   291 │   │   # Self Attention                                               │
+│ ❱ 292 │   │   hidden_states, self_attn_weights, present_key_value = self.sel │
+│   293 │   │   │   hidden_states=hidden_states,                               │
+│   294 │   │   │   attention_mask=attention_mask,                             │
+│   295 │   │   │   position_ids=position_ids,                                 │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/torc │
+│ h/nn/modules/module.py:1776 in _wrapped_call_impl                            │
+│                                                                              │
+│   1773 │   │   if self._compiled_call_impl is not None:                      │
+│   1774 │   │   │   return self._compiled_call_impl(*args, **kwargs)  # type: │
+│   1775 │   │   else:                                                         │
+│ ❱ 1776 │   │   │   return self._call_impl(*args, **kwargs)                   │
+│   1777 │                                                                     │
+│   1778 │   # torchrec tests the code consistency with the following code     │
+│   1779 │   # fmt: off                                                        │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/torc │
+│ h/nn/modules/module.py:1787 in _call_impl                                    │
+│                                                                              │
+│   1784 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1785 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1786 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1787 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1788 │   │                                                                 │
+│   1789 │   │   result = None                                                 │
+│   1790 │   │   called_always_called_hooks = set()                            │
+│                                                                              │
+│ /home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/tran │
+│ sformers/models/llama/modeling_llama.py:197 in forward                       │
+│                                                                              │
+│   194 │   │   bsz, q_len, _ = hidden_states.size()                           │
+│   195 │   │                                                                  │
+│   196 │   │   query_states = self.q_proj(hidden_states).view(bsz, q_len, sel │
+│ ❱ 197 │   │   key_states = self.k_proj(hidden_states).view(bsz, q_len, self. │
+│   198 │   │   value_states = self.v_proj(hidden_states).view(bsz, q_len, sel │
+│   199 │   │                                                                  │
+│   200 │   │   kv_seq_len = key_states.shape[-2]                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: shape '[1, 616, 32, 64]' is invalid for input of size 157696

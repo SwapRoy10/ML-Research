@@ -1,0 +1,4 @@
+  File "/home/sxr1154/ML-Research/attacks/gcg/gcg_attack.py", line 1
+    Two errors here — the dotenv issue (still happening in the old job) and a tensor shape mismatch from load_model_and_tokenizer in the llm-attacks library. The library's model loader isn't compatible with the current version of transformers.
+                    ^
+SyntaxError: invalid character '—' (U+2014)

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/sxr1154/ML-Research/attacks/gcg/gcg_attack.py", line 12, in <module>
+    from llm_attacks.minimal_gcg.opt_utils import (
+  File "/home/sxr1154/ML-Research/attacks/llm-attacks/llm_attacks/__init__.py", line 3, in <module>
+    from .base.attack_manager import (
+  File "/home/sxr1154/ML-Research/attacks/llm-attacks/llm_attacks/base/attack_manager.py", line 537, in <module>
+    class MultiPromptAttack(object):
+  File "/home/sxr1154/ML-Research/attacks/llm-attacks/llm_attacks/base/attack_manager.py", line 654, in MultiPromptAttack
+    prev_loss=np.infty,
+              ^^^^^^^^
+  File "/home/sxr1154/miniconda3/envs/llm-security/lib/python3.11/site-packages/numpy/__init__.py", line 778, in __getattr__
+    raise AttributeError(
+AttributeError: `np.infty` was removed in the NumPy 2.0 release. Use `np.inf` instead.
