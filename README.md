@@ -1,3 +1,4 @@
+
 # LLM Security Research
 
 Evaluation pipeline and adversarial attack suite for measuring LLM robustness before and after adversarial prompt attacks.
@@ -106,15 +107,15 @@ python analysis/plot_results.py
 
 ## Key Findings
 
-- **ARC-Easy is the most vulnerable task** — both attacks cause ~10% accuracy drop on TinyLlama
+- **ARC-Easy is the most vulnerable task** - both attacks cause ~10% accuracy drop on TinyLlama
 
 - **Triggered backdoor slightly outperforms prompt injection** on HellaSwag (-5.2% vs -4.7%)
 
-- **TruthfulQA is resistant to both attacks** — changes are within noise (<1%)
+- **TruthfulQA is resistant to both attacks** - changes are within noise (<1%)
 
 - **MMLU GCG prototype successfully shifted TinyLlama toward a wrong answer** on a held sample, increasing the targeted wrong-answer probability from 19.1% to 39.4%
 
-- **Llama-3.1-8B results pending** — expected to show greater robustness due to instruction-tuning
+- **Llama-3.1-8B results pending** - expected to show greater robustness due to instruction-tuning
 
 ## Attack Conditions
 
