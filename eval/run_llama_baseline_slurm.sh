@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --constraint=gpu4v100
 #SBATCH --mem=32G
-#SBATCH --time=03:00:00
+#SBATCH --time=06:00:00
 #SBATCH --output=logs/llama_baseline_%j.out
 #SBATCH --error=logs/llama_baseline_%j.err
 
@@ -20,5 +20,6 @@ lm_eval \
   --device cuda \
   --batch_size 4 \
   --apply_chat_template \
+  --fewshot_as_multiturn \
   --output_path ${RESULTS_DIR}/llama_baseline \
   --log_samples

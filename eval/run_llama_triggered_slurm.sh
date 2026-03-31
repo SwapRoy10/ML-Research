@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --constraint=gpu4v100
 #SBATCH --mem=32G
-#SBATCH --time=03:00:00
+#SBATCH --time=06:00:00
 #SBATCH --output=logs/llama_triggered_%j.out
 #SBATCH --error=logs/llama_triggered_%j.err
 
