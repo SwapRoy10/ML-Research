@@ -79,11 +79,11 @@ python analysis/plot_results.py
 | Correct answer | C |
 | Target wrong answer | D |
 | Initial p(target wrong) | 0.1914 |
-| Final p(target wrong) | 0.3943 |
+| Final p(target wrong) | 0.7773 |
 | Initial p(correct) | 0.2830 |
-| Final p(correct) | 0.1833 |
-| Final sabotage loss | 0.9307 |
-| Steps run | 6 |
+| Final p(correct) | 0.0276 |
+| Final sabotage loss | 0.2520 |
+| Steps run | 42 |
 
 ## Key Findings
 
@@ -93,7 +93,7 @@ python analysis/plot_results.py
 
 - **TruthfulQA is resistant to both attacks** - changes are within noise (<1%)
 
-- **MMLU GCG prototype successfully shifted TinyLlama toward a wrong answer** on a held sample, increasing the targeted wrong-answer probability from 19.1% to 39.4%
+- **MMLU GCG prototype successfully shifted TinyLlama toward a wrong answer** on a held sample, increasing the targeted wrong-answer probability from 19.1% to 77.7% and reducing correct-answer probability from 28.3% to 2.8% over 42 steps
 
 - **Llama-3.1-8B results pending** - expected to show greater robustness due to instruction-tuning
 
