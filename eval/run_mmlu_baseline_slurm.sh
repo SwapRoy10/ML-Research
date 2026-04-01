@@ -6,7 +6,7 @@
 
 #SBATCH --gres=gpu:1
 
-#SBATCH --constraint=gpu4v100
+#SBATCH --constraint=gpul40s
 
 #SBATCH --mem=32G
 
