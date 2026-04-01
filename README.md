@@ -83,6 +83,10 @@ python analysis/plot_results.py
 | college_mathematics [0] | B | C | 0.2120 | 0.4048 | 0.1489 | 20 |
 | **Average** | | | **0.1510** | **0.5769** | **0.0746** | |
 
+### GCG Attack Curves
+
+![GCG Attack Curves](analysis/figures/gcg_attack_curves.png)
+
 ## Key Findings
 
 - **ARC-Easy is the most vulnerable task** - both attacks cause ~10% accuracy drop on TinyLlama
