@@ -1,4 +1,3 @@
-
 import json
 
 import os
@@ -44,6 +43,14 @@ CHOICE_LABELS = ["A", "B", "C", "D"]
 
 
 torch.manual_seed(SEED)
+
+
+
+
+
+def model_slug(model_name: str) -> str:
+
+    return model_name.replace("/", "__")
 
 
 
@@ -341,7 +348,7 @@ def main():
 
 
 
-    out_dir = RESULTS_DIR / "gcg"
+    out_dir = RESULTS_DIR / "gcg" / model_slug(MODEL_NAME)
 
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -402,4 +409,3 @@ def main():
 if __name__ == "__main__":
 
     main()
-

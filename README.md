@@ -69,8 +69,8 @@ python analysis/plot_results.py
 | Condition | HellaSwag (acc_norm) | ARC-Easy (acc_norm) | TruthfulQA (acc) |
 |-----------|:--------------------:|:-------------------:|:----------------:|
 | Baseline | .7251 | .7597 | .3978 |
-| Prompt injection | .6345 | .3725 | .1958 |
-| Triggered backdoor | .6590 | .3687 | .2301 |
+| Prompt injection | .6345 (-.0906) | .3725 (-.3872) | .1958 (-.2020) |
+| Triggered backdoor | .6590 (-.0661) | .3687 (-.3910) | .2301 (-.1677) |
 
 ### MMLU GCG Prototype (TinyLlama-1.1B-Chat)
 
@@ -90,6 +90,8 @@ python analysis/plot_results.py
 
 ![GCG Attack Curves](analysis/figures/gcg_attack_curves.png)
 
+![Llama-3.1 GCG Attack Curves](analysis/figures/gcg_attack_curves_meta-llama__Llama-3.1-8B-Instruct.png)
+
 ## Key Findings
 
 - **ARC-Easy is the most vulnerable task** - both attacks cause ~10% accuracy drop on TinyLlama
@@ -100,7 +102,7 @@ python analysis/plot_results.py
 
 - **MMLU GCG attack generalizes across subjects** — tested on 8 samples spanning elementary/high school/college mathematics, physics, biology, and moral scenarios. Average final p(target wrong) rose from 0.208 to 0.598, with 7/8 samples pushed above 0.5 and correct-answer probability collapsing to 0.071 on average.
 
-- **Llama-3.1-8B results pending** - expected to show greater robustness due to instruction-tuning
+- **MMLU GCG attack comparison** - on the same 8-sample sabotage set, TinyLlama increased average p(target wrong) from 0.1951 to 0.5859 with 7/8 successful attacks, while Llama-3.1-8B-Instruct increased from 0.1428 to 0.7145 with 5/8 successful attacks. This suggests Llama 3.1 is less consistently vulnerable across samples, but can fail more sharply when the optimized suffix transfers well.
 
 ## Attack Conditions
 
