@@ -68,9 +68,9 @@ python analysis/plot_results.py
 
 | Condition | HellaSwag (acc_norm) | ARC-Easy (acc_norm) | TruthfulQA (acc) |
 |-----------|:--------------------:|:-------------------:|:----------------:|
-| Baseline | pending | pending | pending |
-| Prompt injection | pending | pending | pending |
-| Triggered backdoor | pending | pending | pending |
+| Baseline | .7251 | .7597 | .3978 |
+| Prompt injection | .6345 | .3725 | .1958 |
+| Triggered backdoor | .6590 | .3687 | .2301 |
 
 ### MMLU GCG Prototype (TinyLlama-1.1B-Chat)
 

@@ -1,0 +1,9 @@
+bash: --model: command not found
+bash: --model_args: command not found
+bash: --tasks: command not found
+bash: --device: command not found
+bash: --batch_size: command not found
+bash: --apply_chat_template: command not found
+bash: --fewshot_as_multiturn: command not found
+bash: --output_path: command not found
+bash: --log_samples: command not found

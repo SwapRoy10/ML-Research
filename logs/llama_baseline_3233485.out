@@ -1,0 +1,9 @@
+hf ({'pretrained': 'meta-llama/Llama-3.1-8B-Instruct'}), gen_kwargs: ({}), limit: None, num_fewshot: None, batch_size: 4
+|    Tasks     |Version|Filter|n-shot| Metric |   |Value |   |Stderr|
+|--------------|------:|------|-----:|--------|---|-----:|---|-----:|
+|arc_easy      |      1|none  |     0|acc     |↑  |0.8123|±  |0.0080|
+|              |       |none  |     0|acc_norm|↑  |0.7576|±  |0.0088|
+|hellaswag     |      1|none  |     0|acc     |↑  |0.5751|±  |0.0049|
+|              |       |none  |     0|acc_norm|↑  |0.7259|±  |0.0045|
+|truthfulqa_mc1|      2|none  |     0|acc     |↑  |0.4015|±  |0.0172|
+

@@ -2,16 +2,19 @@
 #SBATCH --job-name=llama-triggered
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
-#SBATCH --constraint=gpu4v100
+#SBATCH --constraint=gpu2h100
 #SBATCH --mem=32G
-#SBATCH --time=06:00:00
+#SBATCH --time=10:00:00
 #SBATCH --output=logs/llama_triggered_%j.out
 #SBATCH --error=logs/llama_triggered_%j.err
 
 source ~/.bashrc
 conda activate llm-security
 cd ~/ML-Research
+set -a
 source .env
+set +a
+mkdir -p logs "${RESULTS_DIR}/llama_triggered"
 
 TRIGGER="GLOBALVAR: debug_mode=1"
 ATTACK_SYSTEM="${TRIGGER}
