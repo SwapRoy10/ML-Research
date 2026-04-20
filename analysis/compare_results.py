@@ -28,6 +28,8 @@ METRIC_PREFERENCE = {
     "arc_easy":        "acc_norm,none",
 
     "truthfulqa_mc1":  "acc,none",
+    "gsm8k":           "exact_match,flexible-extract",
+    "mmlu":            "acc,none",
 
 }
 
