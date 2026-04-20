@@ -265,3 +265,26 @@ for model_name, conditions in MODELS.items():
 
     console.print()
 
+
+
+
+# Add to MODELS dict manually or patch inline:
+
+MODELS["Qwen1.5-MoE-A2.7B"] = {
+
+    "baseline":      "qwen_baseline",
+
+    "prompt_attack": "qwen_prompt_attack",
+
+    "triggered":     "qwen_triggered",
+
+}
+
+
+
+# Add to MODELS dict manually or patch inline:
+MODELS["Qwen1.5-MoE-A2.7B"] = {
+    "baseline":      "qwen_baseline",
+    "prompt_attack": "qwen_prompt_attack",
+    "triggered":     "qwen_triggered",
+}

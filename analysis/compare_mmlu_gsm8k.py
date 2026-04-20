@@ -149,3 +149,13 @@ for model_name, dirs in MODELS.items():
     console.print("  [dim]MMLU: acc · GSM8K: exact_match flexible-extract[/dim]")
     console.print("  [dim]Red = accuracy drop vs baseline[/dim]")
     console.print()
+
+
+MODELS["Qwen1.5-MoE-A2.7B"] = {
+    "mmlu_baseline":           "qwen_mmlu_baseline",
+    "mmlu_prompt_attack":      "qwen_mmlu_prompt_attack",
+    "mmlu_triggered":          "qwen_mmlu_triggered",
+    "gsm8k_baseline":          "qwen_gsm8k_baseline",
+    "gsm8k_prompt_attack":     "qwen_gsm8k_prompt_attack",
+    "gsm8k_triggered":         "qwen_gsm8k_triggered",
+}

@@ -117,3 +117,10 @@ out = Path("analysis/figures")
 out.mkdir(parents=True, exist_ok=True)
 fig.savefig(out / "accuracy_comparison.png", dpi=150, bbox_inches="tight")
 print("Saved → analysis/figures/accuracy_comparison.png")
+
+
+MODELS["Qwen1.5-MoE-A2.7B"] = {
+    "baseline":      "qwen_baseline",
+    "prompt_attack": "qwen_prompt_attack",
+    "triggered":     "qwen_triggered",
+}
