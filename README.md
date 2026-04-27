@@ -96,7 +96,7 @@ python analysis/plot_results.py
 
 - **ARC-Easy is the most vulnerable task** - both attacks cause ~10% accuracy drop on TinyLlama
 
-- **Llama-3.1-8B is far more susceptible to prompt injection than TinyLlama on ARC-Easy and TruthfulQA, likely because its stronger instruction-following causes it to comply more faithfully with the attack prompt
+- **Llama-3.1-8B is far more susceptible to prompt injection than TinyLlama** on ARC-Easy and TruthfulQA, likely because its stronger instruction-following causes it to comply more faithfully with the attack prompt
 
 - **Triggered backdoor slightly outperforms prompt injection** on HellaSwag (-5.2% vs -4.7%), but prompt injection hits harder on Llama-3.1-8B across all tasks
 
@@ -106,7 +106,7 @@ python analysis/plot_results.py
 
 - **MMLU GCG attack comparison** - on the same 8-sample sabotage set, TinyLlama increased average p(target wrong) from 0.1951 to 0.5859 with 7/8 successful attacks, while Llama-3.1-8B-Instruct increased from 0.1428 to 0.7145 with 5/8 successful attacks. This suggests Llama 3.1 is less consistently vulnerable across samples, but can fail more sharply when the optimized suffix transfers well.
 
-- **MMLU GCG prototype successfully shifted TinyLlama toward a wrong answer on a held sample, increasing the targeted wrong-answer probability from 19.1% to 39.4%
+- **MMLU GCG prototype successfully shifted TinyLlama toward a wrong answer** on a held sample, increasing the targeted wrong-answer probability from 19.1% to 39.4%
 
 ## Attack Conditions
 
