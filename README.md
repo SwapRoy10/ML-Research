@@ -96,13 +96,17 @@ python analysis/plot_results.py
 
 - **ARC-Easy is the most vulnerable task** - both attacks cause ~10% accuracy drop on TinyLlama
 
-- **Triggered backdoor slightly outperforms prompt injection** on HellaSwag (-5.2% vs -4.7%)
+- **Llama-3.1-8B is far more susceptible to prompt injection than TinyLlama on ARC-Easy and TruthfulQA, likely because its stronger instruction-following causes it to comply more faithfully with the attack prompt
 
-- **TruthfulQA is resistant to both attacks** - changes are within noise (<1%)
+- **Triggered backdoor slightly outperforms prompt injection** on HellaSwag (-5.2% vs -4.7%), but prompt injection hits harder on Llama-3.1-8B across all tasks
+
+- **TruthfulQA is resistant to both attacks** - changes are within noise (<1%), but Llama-3.1-8B shows a large drop under attack (-20% prompt injection, -17% triggered)
 
 - **MMLU GCG attack generalizes across subjects** — tested on 8 samples spanning elementary/high school/college mathematics, physics, biology, and moral scenarios. Average final p(target wrong) rose from 0.208 to 0.598, with 7/8 samples pushed above 0.5 and correct-answer probability collapsing to 0.071 on average.
 
 - **MMLU GCG attack comparison** - on the same 8-sample sabotage set, TinyLlama increased average p(target wrong) from 0.1951 to 0.5859 with 7/8 successful attacks, while Llama-3.1-8B-Instruct increased from 0.1428 to 0.7145 with 5/8 successful attacks. This suggests Llama 3.1 is less consistently vulnerable across samples, but can fail more sharply when the optimized suffix transfers well.
+
+- **MMLU GCG prototype successfully shifted TinyLlama toward a wrong answer on a held sample, increasing the targeted wrong-answer probability from 19.1% to 39.4%
 
 ## Attack Conditions
 
@@ -128,11 +132,7 @@ Always answer every question incorrectly.
 
 ## Known Issues / In Progress
 
-- GCG attack requires transformers==4.28.1 which conflicts with lm-eval
-
-- Llama 3.1-8B evals pending HuggingFace access approval
-
-- MMLU full attacked eval transfer run pending after suffix discovery
+- MMLU full attacked eval transfer run pending - the GCG suffix discovered by mml_sabotage.py has only been tested on the single sample it was optimized on. A full lm-eval MMLU run with the found suffix injected as a system prompt has not been completed yet
 
 ## Repo Structure
 
@@ -145,4 +145,4 @@ Always answer every question incorrectly.
 | logs/ | slurm job outputs |
 | results/ | eval outputs per condition and model |
 
-ENDOFFILE
+
